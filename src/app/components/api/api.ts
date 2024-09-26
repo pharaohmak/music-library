@@ -39,8 +39,8 @@ interface Album {
 
 // Function to fetch Spotify token
 export const fetchSpotifyToken = async (): Promise<string> => {
-    const clientId = 'dcede41280814d609c55e5f1f09eb1bd'; // Replace with your Client ID
-    const clientSecret = '1ad90f4e65b44b77a874eb1be84d22fb'; // Replace with your Client Secret
+    const clientId = process.env.NEXT_APP_SPOTIFY_CLIENT_ID;
+    const clientSecret = process.env.NEXT_APP_SPOTIFY_CLIENT_SECRET;
 
     const response = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
